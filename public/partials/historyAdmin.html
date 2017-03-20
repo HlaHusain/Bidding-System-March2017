@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/adminHistory.css" >
 <div class="container" ng-controller="historyCtrl">
   <nav class="navbar navbar-default">
     <div class="container-fluid ">
@@ -9,30 +10,35 @@
       </ul>
     </div>
   </nav>
-  <div class="row" >
-    <h2 id="h2_inline" >History  &#8352;</h2>
-  </div>
+  <div class="row">
+        <div class="col-md-4">
+            <h2>History  </h2>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" type="text" value="" ng-model="search" placeholder="Search..."/>
+        </div>
+    </div>
   <div class="row" >
     <table   class=" table table-responsive" >
 
       <thead>
       <tr>
-        <th >productName</th>
+        <th>Product </th>
         <th>Bid Value</th>
-        <th>product Desc</th>
-        <th>Customer Name</th>
+        <th>Description</th>
+        <th>Customer </th>
       </tr>
       </thead>
 
       <tbody id="myTable">
       <tr ng-repeat="data in myData | filter : search"  >
         <td>{{data.productName}}</td>
-        <td>{{data.user_name   }}</td>
-        <td>{{data.bidValue}}</td>
-        <td>{{data.productDesc   }}</td>
-
-
-        <!--<td >{{data.    }}</td>-->
+         <td>{{data.bidValue}}</td>
+        <td>{{data.productDesc}}</td>
+        <td>{{data.user_name}}</td>
       </tr>
 
       </tbody>

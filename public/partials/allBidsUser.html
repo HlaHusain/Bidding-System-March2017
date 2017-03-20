@@ -1,46 +1,52 @@
-
+<link rel="stylesheet" href="css/userAll.css" >
 
 <div class="container">
     <!--<nav class="navbar navbar-default">-->
-        <!--<div class="container-fluid ">-->
-            <!--<ul class="nav navbar-nav ">-->
+    <!--<div class="container-fluid ">-->
+    <!--<ul class="nav navbar-nav ">-->
 
-                <!--<li  class="text-center active"><a href="#/all-bids-user">All Bids</a></li>-->
-                <!--<li class="text-center" ><a href="#/opened-bids-user">My Opened Bids</a></li>-->
-                <!--<li class="text-center" ><a  href="#/closed-bids-user">My Closed Bids</a></li>-->
-            <!--</ul>-->
-        <!--</div>-->
+    <!--<li  class="text-center active"><a href="#/all-bids-user">All Bids</a></li>-->
+    <!--<li class="text-center" ><a href="#/opened-bids-user">My Opened Bids</a></li>-->
+    <!--<li class="text-center" ><a  href="#/closed-bids-user">My Closed Bids</a></li>-->
+    <!--</ul>-->
+    <!--</div>-->
     <!--</nav>-->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>All Bids  </h2>
+        </div>
+        <div class="col-md-4">
 
-    <h2 id="h2_inline" >All Bids  &#8352;</h2>
-    <div id="div_inline"  class="col-xs-3 " >
-        <input class="form-control" type="text" value="" ng-model="search" placeholder="Search..."/>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" type="text" value="" ng-model="search" placeholder="Search..."/>
+        </div>
     </div>
-    </br>
 
-    <div  ng-controller="user">
+    <div ng-controller="user">
         <div class="row">
 
             <table   class=" table table-responsive" >
 
                 <thead>
-                <tr>
+                    <tr>
 
-                    <th >Item</th>
-                    <th >Description</th>
-                    <th >Remaining</th>
-                    <th >Started</th>
-                    <th >Max Current Bid</th>
-                </tr>
+                        <th >Item</th>
+                        <th >Description</th>
+                        <th >Remaining Time</th>
+                        <th >Started </th>
+                        <th >Max Bid $$</th>
+                        <th></th>
+                    </tr>
                 </thead>
 
 
-                </tbody>
-                <tbody id="myTable">
+            </tbody>
+            <tbody id="myTable">
                 <tr ng-repeat="data in myData | filter : search" >
 
                     <td>{{data.productName}}</td>
-                    <td>{{data.productDesc}}</td>
+                    <td >{{data.productDesc}}</td>
                     <td ng-init="remaining(data.startTime,data.period,data.id,$index)">{{data.Remaining}}</td>
                     <td >{{data.startTime}}</td>
                     <td >
@@ -54,13 +60,13 @@
                     </td>
                 </tr>
 
-                </tbody>
-            </table>
-        </div>
-
+            </tbody>
+        </table>
     </div>
 
-    <!--  <script src="app/countdown.js"></script> -->
+</div>
+
+<!--  <script src="app/countdown.js"></script> -->
 
 </div>
 </div>
